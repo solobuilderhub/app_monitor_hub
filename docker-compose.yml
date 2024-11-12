@@ -7,11 +7,3 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
-
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    ports:
-      - "3007:3000"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin
