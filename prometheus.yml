@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  # Scrape Prometheus server itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['188.245.189.26:9090']
+
+  # Scrape Node.js app 1
+  - job_name: 'redditpulse-backend'
+    static_configs:
+      - targets: ['188.245.189.26:3001']
+
+  # Scrape Node.js app 2 (adjust <app-ip> if needed)
+  - job_name: 'linkzelo-backend'
+    static_configs:
+      - targets: ['188.245.189.26:3004']
